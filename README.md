@@ -7,3 +7,7 @@ This project involves building an E-Commerce Sales Dashboard using SQL Server an
 - **Data Modeling** – Build an optimized data model by defining table relationships and implementing a star schema structure for efficient analytics.
 - **KPI Development Using DAX** – Develop DAX measures to calculate key business metrics, including Sales, Profit, Order Quantity, Profit Margin, YTD, PYTD, and YoY Growth.
 - **Data Visualization** – Develop interactive Power BI dashboards to visualize sales performance, profitability, product trends, regional distribution, and shipping effectiveness, enabling data-driven decision-making.
+
+## Data Integration
+The e-commerce dataset was initially stored in CSV format and imported into Microsoft SQL Server to establish a centralized data repository. SQL Server was utilized to manage the transactional data and perform preliminary data validation. Power BI was then connected directly to SQL Server to retrieve the processed dataset, ensuring a streamlined and scalable data pipeline for analysis and reporting. This integration enabled efficient data access, consistency across analyses, and a single source of truth for the dashboard.
+<img width="856" height="416" alt="image" src="https://github.com/user-attachments/assets/719b98a9-5b76-4769-ad0b-b6005e8db967" />
