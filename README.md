@@ -10,4 +10,4 @@ This project involves building an E-Commerce Sales Dashboard using SQL Server an
 
 ## Data Integration
 The e-commerce dataset was initially stored in CSV format and imported into Microsoft SQL Server to establish a centralized data repository. SQL Server was utilized to manage the transactional data and perform preliminary data validation. Power BI was then connected directly to SQL Server to retrieve the processed dataset, ensuring a streamlined and scalable data pipeline for analysis and reporting. This integration enabled efficient data access, consistency across analyses, and a single source of truth for the dashboard.
-<img width="656" height="316" alt="image" src="https://github.com/user-attachments/assets/719b98a9-5b76-4769-ad0b-b6005e8db967" />
+<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/719b98a9-5b76-4769-ad0b-b6005e8db967" />
