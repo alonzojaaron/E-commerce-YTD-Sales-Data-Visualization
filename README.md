@@ -26,5 +26,58 @@ SELECT *
 FROM check_duplicates
 WHERE record_count > 2;
 ```
+### 2. Validated Missing Values
+Performed SQL queries to check for null or missing values across all columns in the dataset.
+```sql
+SELECT *
+FROM ecommerce_data
+WHERE 
+	customer_id IS NULL
+	OR
+	customer_first_name IS NULL
+	OR
+	customer_last_name IS NULL
+	OR
+	category_name IS NULL
+	OR
+	product_name IS NULL
+	OR
+	customer_segment IS NULL
+	OR
+	customer_city IS NULL
+	OR
+	customer_state IS NULL
+	OR
+	customer_country IS NULL
+	OR
+	customer_region IS NULL
+	OR
+	delivery_status IS NULL
+	OR
+	order_date IS NULL
+	OR
+	order_id IS NULL
+	OR
+	ship_date IS NULL
+	OR
+	shipping_type IS NULL
+	OR
+	days_for_shipment_scheduled IS NULL
+	OR
+	days_for_shipment_real IS NULL
+	OR
+	order_item_discount IS NULL
+	OR
+	sales_per_order IS NULL
+	OR
+	order_quantity IS NULL
+	OR
+	profit_per_order IS NULL;
+```
+### 3. Verified Data Types
+Used Power Query to review and confirm that each column was assigned the appropriate data type (e.g., Date, Text, Decimal Number, Whole Number).
+<img width="1360" height="200" alt="image" src="https://github.com/user-attachments/assets/15b3a46c-b8bb-46a3-880f-fe412738c813" />
+
+
 
 
