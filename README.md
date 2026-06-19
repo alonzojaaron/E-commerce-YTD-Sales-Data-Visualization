@@ -75,7 +75,7 @@ WHERE
 	profit_per_order IS NULL;
 ```
 ### 3. Verified Data Types
-Used Power Query to review and confirm that each column was assigned the appropriate data type (e.g., Date, Text, Decimal Number, Whole Number).
+Used Power Query to review and confirm that each column was assigned the appropriate data type.
 <img width="1360" height="200" alt="image" src="https://github.com/user-attachments/assets/15b3a46c-b8bb-46a3-880f-fe412738c813" />
 
 
