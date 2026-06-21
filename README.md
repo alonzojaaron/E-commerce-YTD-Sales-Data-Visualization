@@ -82,7 +82,13 @@ Used Power Query to review and confirm that each column was assigned the appropr
 This stage focuses on creating a dedicated Date table to support time-based analysis and DAX time intelligence calculations.
 ### 1. Created a Calendar Table
 Generated a Date table using DAX with the CALENDAR() function, covering the full range of transaction dates from the dataset.
-<img width="347" height="112" alt="image" src="https://github.com/user-attachments/assets/f9f9efaf-7328-430d-867c-88112552a3ab" />
+```DAX
+Calendar = 
+CALENDAR(
+    MIN(ecommerce_data[order_date]),
+    MAX(ecommerce_data[order_date])
+)
+```
 
 
 
