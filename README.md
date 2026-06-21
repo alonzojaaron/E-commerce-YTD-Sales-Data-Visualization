@@ -78,6 +78,11 @@ WHERE
 Used Power Query to review and confirm that each column was assigned the appropriate data type.
 <img width="1360" height="200" alt="image" src="https://github.com/user-attachments/assets/15b3a46c-b8bb-46a3-880f-fe412738c813" />
 
+## Date Intelligence Setup
+This stage focuses on creating a dedicated Date table to support time-based analysis and DAX time intelligence calculations.
+### 1. Created a Calendar Table
+Generated a Date table using DAX with the CALENDAR() function, covering the full range of transaction dates from the dataset.
+<img width="347" height="112" alt="image" src="https://github.com/user-attachments/assets/f9f9efaf-7328-430d-867c-88112552a3ab" />
 
 
 
