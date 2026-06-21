@@ -89,6 +89,18 @@ CALENDAR(
     MAX(ecommerce_data[order_date])
 )
 ```
+## Data Modeling
+This stage focuses on building a structured data model to support accurate analysis and reporting in Power BI.
+### 1. Defined Fact and Dimension Tables
+Identified ecommerce_data as the fact table containing all transactional records, while Calendar and us_state_long_lat_codes were used as dimension tables.
+### 2. Established Table Relationships
+Created relationships to connect the fact and dimension tables:
+ - ecommerce_data[customer_state] → us_state_long_lat_codes[name] for geographic analysis
+ - ecommerce_data[order_date] → Calendar[Date] as an active relationship for time-based reporting
+ - ecommerce_data[ship_date] → Calendar[Date] as an inactive relationship for shipment-based analysis
+<img width="1022" height="322" alt="image" src="https://github.com/user-attachments/assets/b88b473b-28c9-4444-b907-4e275a44d667" />
+### 3. Configured Role of Date Table
+Utilized the Calendar table to support time intelligence calculations such as YTD, PYTD, and YoY analysis.
 
 
 
