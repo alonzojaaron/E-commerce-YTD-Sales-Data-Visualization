@@ -89,6 +89,7 @@ CALENDAR(
     MAX(ecommerce_data[order_date])
 )
 ```
+
 ## Data Modeling
 This stage focuses on building a structured data model to support accurate analysis and reporting in Power BI.
 ### 1. Defined Fact and Dimension Tables
@@ -102,7 +103,8 @@ Created relationships to connect the fact and dimension tables:
 ### 3. Configured Role of Date Table
 Utilized the Calendar table to support time intelligence calculations such as YTD, PYTD, and YoY analysis.
 
-
+## KPI Development Using DAX
+This stage focuses on building DAX measures to calculate and analyze key business KPIs, with emphasis on performance trends and year-over-year comparisons.
 
 
 
