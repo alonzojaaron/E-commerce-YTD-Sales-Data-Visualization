@@ -108,31 +108,31 @@ Utilized the Calendar table to support time intelligence calculations such as YT
 This stage focuses on building DAX measures to calculate and analyze key business KPIs, with emphasis on performance trends and year-over-year comparisons.
 ### 1. Sales
 This stage focuses on building DAX measures to analyze Sales performance through time intelligence, trend visualization, and dynamic indicators.
-	#### 1.1 YTD Sales
-	Used the TOTALYTD function to compute Year-to-Date Sales:
-	```DAX
-	YTD Sales = 
-	TOTALYTD(
-	    SUM(ecommerce_data[sales_per_order]),
-	    'Calendar'[Date]
+#### 1.1 YTD Sales
+Used the TOTALYTD function to compute Year-to-Date Sales:
+```DAX
+YTD Sales = 
+TOTALYTD(
+	SUM(ecommerce_data[sales_per_order]),
+	'Calendar'[Date]
+)
+```
+#### 1.2 PYTD Sales
+Used CALCULATE, DATESYTD, and SAMEPERIODLASTYEAR to compute Previous Year-to-Date Sales:
+```DAX
+PYTD Sales = 
+CALCULATE(
+	SUM(ecommerce_data[sales_per_order]),
+	DATESYTD(
+		SAMEPERIODLASTYEAR('Calendar'[Date])
 	)
-	```
-	#### 1.2 PYTD Sales
-	Used CALCULATE, DATESYTD, and SAMEPERIODLASTYEAR to compute Previous Year-to-Date Sales:
-	```DAX
-	PYTD Sales = 
-	CALCULATE(
-	    SUM(ecommerce_data[sales_per_order]),
-	    DATESYTD(
-	        SAMEPERIODLASTYEAR('Calendar'[Date])
-	    )
-	)
-	```
-	#### 1.3 YoY Sales Growth
-	Calculated Year-over-Year Sales growth using a simple ratio comparison:
-	```DAX
-	YoY Sales = 
-	([YTD Sales] - [PYTD Sales]) / [PYTD Sales]
-	```
+)
+```
+#### 1.3 YoY Sales Growth
+Calculated Year-over-Year Sales growth using a simple ratio comparison:
+```DAX
+YoY Sales = 
+([YTD Sales] - [PYTD Sales]) / [PYTD Sales]
+```
 
 
