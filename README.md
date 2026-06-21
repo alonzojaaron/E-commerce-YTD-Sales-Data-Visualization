@@ -128,4 +128,11 @@ CALCULATE(
     )
 )
 ```
+#### 1.3 YoY Sales Growth
+Calculated Year-over-Year Sales growth using a simple ratio comparison:
+```DAX
+YoY Sales = 
+([YTD Sales] - [PYTD Sales]) / [PYTD Sales]
+```
+
 
