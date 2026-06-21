@@ -100,6 +100,7 @@ Created relationships to connect the fact and dimension tables:
  - ecommerce_data[order_date] → Calendar[Date] as an active relationship for time-based reporting
  - ecommerce_data[ship_date] → Calendar[Date] as an inactive relationship for shipment-based analysis
 <img width="1022" height="322" alt="image" src="https://github.com/user-attachments/assets/b88b473b-28c9-4444-b907-4e275a44d667" />
+
 ### 3. Configured Role of Date Table
 Utilized the Calendar table to support time intelligence calculations such as YTD, PYTD, and YoY analysis.
 
