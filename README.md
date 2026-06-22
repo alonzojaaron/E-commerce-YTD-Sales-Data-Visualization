@@ -104,7 +104,7 @@ Created relationships to connect the fact and dimension tables:
 ### 3. Configured Role of Date Table
 Utilized the Calendar table to support time intelligence calculations such as YTD, PYTD, and YoY analysis.
 
-## KPI Development Using DAX
+## KPI Development
 This stage focuses on building DAX measures to calculate and analyze key business KPIs, with emphasis on performance trends and year-over-year comparisons. SQL was also used to validate and cross-check DAX results to ensure accuracy and consistency between the Power BI measures and the source data.
 ### 1. Sales
 #### DAX (Power BI)
@@ -154,4 +154,71 @@ IF([YoY Sales] > 0, "Green", "Red")
 ##### 1.6 Sales Trend Visualization
 Built an area chart using the sum of sales_per_order per month to visualize monthly sales trends and support performance analysis over time.
 <img width="257" height="110" alt="image" src="https://github.com/user-attachments/assets/3ea865f9-336b-4eca-ab78-15e6acd6f922" />
+
+#### SQL (Validation Layer)
+SQL queries were used to independently compute and validate KPI results from DAX.
+##### 1.1 Total Sales Per Year
+Aggregates total sales per year to analyze yearly performance trends.
+```sql
+SELECT
+    YEAR(order_date) AS Year,
+    SUM(sales_per_order) AS total_sales
+FROM ecommerce_data
+GROUP BY YEAR(order_date)
+ORDER BY Year;
+```
+##### 1.2 YTD Sales
+Calculates total sales for the current year to date (2022).
+```sql
+SELECT
+    SUM(sales_per_order) AS YTD_Sales
+FROM ecommerce_data
+WHERE YEAR(order_date) = '2022';
+```
+##### 1.3 PYTD Sales
+Calculates total sales for the same period in the previous year (2021).
+```sql
+SELECT
+    SUM(sales_per_order) AS PYTD_Sales
+FROM ecommerce_data
+WHERE YEAR(order_date) = '2021';
+```
+##### 1.4 Running Total (YTD Trend)
+Computes cumulative sales over time to show sales progression.
+```sql
+SELECT
+    order_date,
+    sales_per_order,
+    SUM(sales_per_order) OVER (
+        PARTITION BY YEAR(order_date)
+        ORDER BY order_date
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS YTD
+FROM ecommerce_data;
+```
+##### 1.5 YoY Sales Growth
+Compares current year sales vs previous year sales to compute growth percentage.
+```sql
+WITH sales_summary AS (
+    SELECT
+        SUM(CASE
+            WHEN order_date >= '2022-01-01'
+             AND order_date < '2023-01-01'
+            THEN sales_per_order
+        END) AS YTD_Sales,
+        
+        SUM(CASE
+            WHEN order_date >= '2021-01-01'
+             AND order_date < '2022-01-01'
+            THEN sales_per_order
+        END) AS PYTD_Sales
+    FROM ecommerce_data
+)
+SELECT
+    YTD_Sales AS current_year_sales,
+    PYTD_Sales AS previous_year_sales,
+    ROUND((YTD_Sales - PYTD_Sales) / NULLIF(PYTD_Sales, 0) * 100, 2) AS YoY_Growth_Percentage;
+```
+
+
 
