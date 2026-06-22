@@ -221,4 +221,43 @@ SELECT
 ```
 > **Note:** The same KPI development and validation approach used for Sales was also applied to **Profit**, **Total Quantity**, and **Profit Margin**. For each KPI, DAX measures were created for YTD, PYTD, YoY Growth, dynamic trend indicators, and conditional formatting, while SQL queries were used to validate the calculated results and ensure consistency with the source data.
 
+## Data Visualization
+This stage focuses on transforming KPI calculations into interactive visualizations that provide insights into sales performance, product trends, regional distribution, and shipping behavior.
+<img width="1298" height="726" alt="image" src="https://github.com/user-attachments/assets/274f58d8-ab7e-49d3-9f28-7353d3d1427d" />
 
+### 1. Sales by Category (Matrix)
+A Matrix visual was created to compare sales performance across product categories.
+ - Rows: Category
+ - Values:
+ 	- YTD Sales
+ 	- PYTD Sales
+ 	- YoY Sales Growth
+ 	- Sales Trend Icon
+This visualization enables quick comparison of category performance while highlighting year-over-year changes through dynamic trend indicators.
+### 2. Sales by State (Map)
+A Map visual was developed to display the geographical distribution of sales across states.
+ - Location: Customer State
+ - Values: YTD Sales
+ - Supporting Data: Latitude and Longitude from the us_state_long_lat_codes table
+### 3. Top 5 Products by YTD Sales (Stacked Bar Chart)
+A Stacked Bar Chart was created to highlight the top-performing products based on YTD Sales.
+ - Axis: Product Name
+ - Values: YTD Sales
+ - Filter: Top 5 Products
+This visualization helps identify the products that contribute the most to overall sales performance.
+### 4. Bottom 5 Products by YTD Sales (Stacked Bar Chart)
+A second Stacked Bar Chart was created to identify the lowest-performing products.
+ - Axis: Product Name
+ - Values: YTD Sales
+ - Filter: Bottom 5 Products
+This visualization helps uncover products that may require additional attention or improvement strategies.
+### 5. YTD Sales by Region (Donut Chart)
+A Donut Chart was used to visualize the distribution of YTD Sales across regions.
+ - Legend: Region
+ - Values: YTD Sales
+This visualization provides a quick view of each region's contribution to total sales.
+### 6. YTD Sales by Shipping Type (Pie Chart)
+A Pie Chart was created to analyze sales distribution by shipping method.
+ - Legend: Shipping Type
+ - Values: YTD Sales
+This visualization highlights the proportion of sales generated through each shipping option and helps identify the most utilized shipping methods.
