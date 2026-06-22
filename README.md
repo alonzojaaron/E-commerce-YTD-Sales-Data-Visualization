@@ -106,8 +106,8 @@ Utilized the Calendar table to support time intelligence calculations such as YT
 
 ## KPI Development Using DAX
 This stage focuses on building DAX measures to calculate and analyze key business KPIs, with emphasis on performance trends and year-over-year comparisons. SQL was also used to validate and cross-check DAX results to ensure accuracy and consistency between the Power BI measures and the source data.
-### DAX (Power BI)
-#### 1. Sales
+### 1. Sales
+#### DAX (Power BI)
 This stage focuses on building DAX measures to analyze Sales performance through time intelligence, trend visualization, and dynamic indicators.
 ##### 1.1 YTD Sales
 Used the TOTALYTD function to compute Year-to-Date Sales:
