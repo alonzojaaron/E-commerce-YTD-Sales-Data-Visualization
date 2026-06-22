@@ -105,10 +105,11 @@ Created relationships to connect the fact and dimension tables:
 Utilized the Calendar table to support time intelligence calculations such as YTD, PYTD, and YoY analysis.
 
 ## KPI Development Using DAX
-This stage focuses on building DAX measures to calculate and analyze key business KPIs, with emphasis on performance trends and year-over-year comparisons.
-### 1. Sales
+This stage focuses on building DAX measures to calculate and analyze key business KPIs, with emphasis on performance trends and year-over-year comparisons. SQL was also used to validate and cross-check DAX results to ensure accuracy and consistency between the Power BI measures and the source data.
+### DAX (Power BI)
+#### 1. Sales
 This stage focuses on building DAX measures to analyze Sales performance through time intelligence, trend visualization, and dynamic indicators.
-#### 1.1 YTD Sales
+##### 1.1 YTD Sales
 Used the TOTALYTD function to compute Year-to-Date Sales:
 ```DAX
 YTD Sales = 
@@ -117,7 +118,7 @@ TOTALYTD(
 	'Calendar'[Date]
 )
 ```
-#### 1.2 PYTD Sales
+##### 1.2 PYTD Sales
 Used CALCULATE, DATESYTD, and SAMEPERIODLASTYEAR to compute Previous Year-to-Date Sales:
 ```DAX
 PYTD Sales = 
@@ -128,11 +129,29 @@ CALCULATE(
 	)
 )
 ```
-#### 1.3 YoY Sales Growth
+##### 1.3 YoY Sales Growth
 Calculated Year-over-Year Sales growth using a simple ratio comparison:
 ```DAX
 YoY Sales = 
 ([YTD Sales] - [PYTD Sales]) / [PYTD Sales]
 ```
-
+##### 1.4 Sales Trend Icon Indicator
+Used IF logic and UNICHAR to display dynamic up/down arrows based on performance:
+```DAX
+Sales Trend Icon = 
+VAR positive = UNICHAR(9650)
+VAR negative = UNICHAR(9660)
+VAR result = 
+    IF([YoY Sales] > 0, positive, negative)
+RETURN result
+```
+##### 1.5 Sales Background Color (Conditional Formatting)
+Created a DAX measure to drive conditional formatting in Power BI:
+```DAX
+Sales BG Color = 
+IF([YoY Sales] > 0, "Green", "Red")
+```
+##### 1.6 Sales Trend Visualization
+Built an area chart using the sum of sales_per_order per month to visualize monthly sales trends and support performance analysis over time.
+<img width="257" height="110" alt="image" src="https://github.com/user-attachments/assets/3ea865f9-336b-4eca-ab78-15e6acd6f922" />
 
