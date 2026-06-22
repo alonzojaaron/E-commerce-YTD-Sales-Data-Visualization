@@ -219,6 +219,6 @@ SELECT
     PYTD_Sales AS previous_year_sales,
     ROUND((YTD_Sales - PYTD_Sales) / NULLIF(PYTD_Sales, 0) * 100, 2) AS YoY_Growth_Percentage;
 ```
-
+> **Note:** The same KPI development and validation approach used for Sales was also applied to **Profit**, **Total Quantity**, and **Profit Margin**. For each KPI, DAX measures were created for YTD, PYTD, YoY Growth, dynamic trend indicators, and conditional formatting, while SQL queries were used to validate the calculated results and ensure consistency with the source data.
 
 
