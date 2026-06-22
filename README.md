@@ -233,31 +233,53 @@ A Matrix visual was created to compare sales performance across product categori
  	- PYTD Sales
  	- YoY Sales Growth
  	- Sales Trend Icon
+
 This visualization enables quick comparison of category performance while highlighting year-over-year changes through dynamic trend indicators.
 ### 2. Sales by State (Map)
 A Map visual was developed to display the geographical distribution of sales across states.
  - Location: Customer State
  - Values: YTD Sales
  - Supporting Data: Latitude and Longitude from the us_state_long_lat_codes table
+
+This visualization helps identify high-performing and low-performing sales regions across the United States.
 ### 3. Top 5 Products by YTD Sales (Stacked Bar Chart)
 A Stacked Bar Chart was created to highlight the top-performing products based on YTD Sales.
  - Axis: Product Name
  - Values: YTD Sales
  - Filter: Top 5 Products
+
 This visualization helps identify the products that contribute the most to overall sales performance.
 ### 4. Bottom 5 Products by YTD Sales (Stacked Bar Chart)
 A second Stacked Bar Chart was created to identify the lowest-performing products.
  - Axis: Product Name
  - Values: YTD Sales
  - Filter: Bottom 5 Products
+
 This visualization helps uncover products that may require additional attention or improvement strategies.
 ### 5. YTD Sales by Region (Donut Chart)
 A Donut Chart was used to visualize the distribution of YTD Sales across regions.
  - Legend: Region
  - Values: YTD Sales
+
 This visualization provides a quick view of each region's contribution to total sales.
 ### 6. YTD Sales by Shipping Type (Pie Chart)
 A Pie Chart was created to analyze sales distribution by shipping method.
  - Legend: Shipping Type
  - Values: YTD Sales
+
 This visualization highlights the proportion of sales generated through each shipping option and helps identify the most utilized shipping methods.
+
+## Key Insights
+ - YTD Sales reached $11.53M, representing a 0.83% decline compared to the previous year, indicating relatively stable revenue performance with a slight decrease.
+ - YTD Profit totaled $1.34M, achieving a 4.50% increase year-over-year despite lower sales growth, suggesting improved profitability and cost management.
+ - YTD Total Quantity reached 107.22K units, reflecting a 7.29% decrease compared to the previous year, indicating reduced order volume.
+ - YTD Profit Margin improved to 11.58%, with a 5.37% YoY increase, demonstrating enhanced operational efficiency and stronger profit generation per dollar of sales.
+ - Office Supplies generated the highest sales ($6.92M) among all categories, followed by Furniture ($2.52M) and Technology ($2.10M).
+ - Furniture was the only category that achieved positive growth (+0.73%), while Office Supplies (-1.22%) and Technology (-1.37%) experienced slight year-over-year declines.
+ - The lowest-performing products generated less than $400 in sales, with Rediform S.O.S. Phone Message Books ($179.99) recording the lowest YTD Sales.
+ - The West region contributed the highest sales ($3.72M).
+ - Standard Class dominated shipping preferences, accounting for 60.51% of total sales, significantly outperforming:
+	 - Second Class (19.22%)
+	 - First Class (15.10%)
+ - Geographic analysis showed strong sales concentration in several states across the West and East regions, aligning with the regions that generated the highest overall revenue.
+ - Although sales and order quantity declined slightly, improvements in profit and profit margin indicate that the business generated revenue more efficiently during the reporting period.
